@@ -1,0 +1,134 @@
+$menu-1 : #ff544d;
+$menu-2 : #ffc02b;
+$menu-3 : #24cf40;
+$menuColorList: $menu-1 $menu-2 $menu-3;
+
+@font-face {
+  font-family: 'Cabin Sketch';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Cabin Sketch Regular'), local('CabinSketch-Regular'), url(https://fonts.gstatic.font.im/s/cabinsketch/v11/QGYpz_kZZAGCONcK2A4bGOj8mNhN.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+.wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-family: 'Cabin Sketch';
+  .box {
+    position: absolute;
+    width: 6.5rem;
+    height: 8rem;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    padding: 3px 4px;
+    border-radius: 0.3rem;
+    background-color: #525252;
+    overflow: hidden;
+    .top {
+      position: relative;
+      height: 30%;
+      border-radius: 0.3rem 0.3rem 0 0;
+      background-color: #464646;
+      box-shadow: 0px -2px 0#5e5e5e inset;
+      .number-wrap{
+        position: absolute;
+        top: 0.8rem;
+        bottom: 0;
+        width: 100%;
+        padding: 0 10%;
+        color: #fff;
+        .number{
+          display: flex;
+          flex-flow: column;
+          justify-content: flex-end;
+          height: 100%;
+          text-align: right;
+          font-size: 0.8rem;
+        }
+      }
+    }
+    .bottom {
+      height: 70%;
+      border-radius: 0 0 0.3rem 0.3rem;
+      background-color: #525252;
+      .btn-wrap{
+        display: flex;
+        width: 90%;
+        height: 100%;
+        margin: 0 auto;
+        .left, .right{
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          height: 100%;
+          .btn{
+            position: relative;
+            width: 1.1rem;
+            line-height: 1.1rem;
+            color: #fff;
+            font-size: 0.6rem;
+            text-align: center;
+            border-radius: 50%;
+            background-color: #787878;
+            box-shadow: 0px 6px 10px 0px #3c3c3c;
+            transition: .2s;
+            cursor: pointer;
+            &.ctrl{
+              background-color: #f87474;
+            }
+            &.zero{
+              width: 2.3rem;
+              border-radius: 3rem;
+            }
+            &:active{
+              box-shadow: none;
+            }
+          }
+        }
+        .left{
+          flex-flow: row wrap;
+          width: 70%;
+        }
+        .right{
+          flex-flow: column wrap;
+          color: #fff;
+          width: 30%;
+        }
+      }
+    }
+  }
+}
+
+.menu {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  height: 0.8rem;
+  padding-left: 5%;
+  .item{
+    width: 0.35rem;
+    height: 0.35rem;
+    line-height: 0.35rem;
+    font-size: 0.32rem;
+    margin-left: 0.15rem;
+    font-family: '黑体';
+    text-align: center;
+    border-radius: 50%;
+    background-color: #000;
+  }
+  @for $i from 1 to length($menuColorList) + 1 {
+    .item:nth-child(#{$i}){
+      @if $i == 1 {
+        margin-left: 0;
+      }
+      background-color: nth($menuColorList,$i);
+    }
+  }
+}

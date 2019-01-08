@@ -1,0 +1,40 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.title{
+  font-size: 20px;
+}
+
+.select{
+  width: 100px;
+  height: 20px;
+}
+
+.btn{
+  width: 100px;
+  height: 30px;
+  font-size: 20px;
+  margin-left: 10px;
+  cursor: pointer;
+  border: 1px solid #000;
+}
+
+.bg{
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .test-relativeimg{
+    width: 200px;
+    height: 200px;
+    background-image: url("./assets/black-coffee.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
