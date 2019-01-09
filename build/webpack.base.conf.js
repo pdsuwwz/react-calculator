@@ -29,14 +29,14 @@ module.exports = {
       include: resolve('src'),
       options: {
         fix: true,
-        cache: resolve('.cache/eslint'),
+        // cache: resolve('.cache/eslint'), // 缓存导致了之后对 eslint 配置的一切修改都无法生效的问题
         failOnError: true, // 生产环境发现代码不合法，则中断编译
         useEslintrc: true,
         configFile: resolve('.eslintrc.js'),
         formatter: require('eslint-friendly-formatter'),
-        // baseConfig: {
-        //   extends: [resolve('.eslintrc.js')]
-        // }
+        baseConfig: {
+          extends: [resolve('.eslintrc.js')]
+        }
       }
     }, 
     {

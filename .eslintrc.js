@@ -4,7 +4,6 @@ const eslintConfig = {
   "parserOptions": {
     "sourceType": "module",
     "ecmaVersion": 7,
-    "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true
     }
@@ -30,6 +29,8 @@ const eslintConfig = {
   "rules": {
     "no-var": 1,
     "no-alert": 2,
+    "eqeqeq": "off", // 恒等比较
+    "no-self-assign": "off",
     "no-ternary": 0,
     "standard/no-callback-literal": 0,
     "func-call-spacing": 0,
